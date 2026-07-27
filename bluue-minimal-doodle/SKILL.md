@@ -1,23 +1,24 @@
 ---
 name: bluue-minimal-doodle
-description: Generate or prompt minimalist black-and-white hand-drawn doodle illustrations for people, literary or screen works, concepts, events, places, objects, products, and brands. Use when the user wants a sparse white-background image with rough black marker lines, ample negative space, low information density, restrained expression, literary notebook-sketch character, or a few symbolic visual hints. Support new generation, prompt-only requests, variants, and optional reference images; do not use for polished line art, colorful cartoons, photorealism, complex narrative scenes, or general image styles outside this visual language.
+description: Generate or prompt minimalist hand-drawn doodle illustrations for people, literary or screen works, concepts, events, places, objects, products, and brands. Use when the user wants the default sparse black-and-white rough-marker literary style, or explicitly requests the optional bold-flat-accent branch with smooth thick outlines, large black fills, and one controlled accent color. Support new generation, prompt-only requests, variants, and optional reference images; do not use for photorealism, complex narrative scenes, richly colored illustration, or general image styles outside these two variants.
 ---
 
 # Bluue Minimal Doodle
 
-Turn any theme into one visually sparse, emotionally precise black-marker doodle. Resolve the theme, core idea, mood, and symbols before calling the image generator; never send unresolved template variables or automatic-selection values to the model.
+Turn any theme into one emotionally precise minimalist doodle. Treat this as one skill with one default style and one optional internal branch, never as two separately installed skills. Resolve the style, theme, core idea, mood, action, and symbols before calling the image generator; never send unresolved template variables or automatic-selection values to the model.
 
 ## Defaults
 
 Use these defaults unless the user overrides them:
 
 - Theme type: infer automatically
+- Style variant: `rough-literary`
 - Output mode: generate the image
 - Mood: infer from the theme; do not force loneliness, coldness, or absurdity
 - Symbols: choose 2; allow 1–3
 - Composition: one subject near the lower center
 - Background: plain white with approximately 70–80% empty space
-- Palette: pure black lines on white only
+- Palette: pure black lines on white only for `rough-literary`
 - Text: none
 - Recognizability: suggestive rather than realistic
 - Aspect ratio: 1:1
@@ -37,19 +38,34 @@ Accept natural-language requests. Do not require the user to provide a parameter
 
 Ask a question only when the theme itself is missing or an ambiguous identity would materially change the image. Infer all non-critical choices.
 
-### 2. Build a resolved visual brief
+### 2. Select the style variant
+
+Use `rough-literary` unless the user explicitly requests `bold-flat-accent` or clearly asks for the combined visual language of smooth thick black outlines, large solid-black fills, a close or medium subject, and exactly one controlled accent color.
+
+- Do not switch branches merely because the user asks for a small brand-color accent; preserve `rough-literary` unless the rest of the request also calls for the bold flat treatment.
+- Do not blend the two prompt languages. Never ask for rough wobbling marker lines and smooth near-uniform outlines in the same image.
+- When `bold-flat-accent` is selected, read [references/bold-flat-accent.md](references/bold-flat-accent.md) completely and let its rendering, color, composition, symbol-count, prompt, and QA rules override the corresponding `rough-literary` rules below.
+- Keep the shared theme analysis, research, image-tool workflow, delivery rules, and user instructions unchanged.
+
+### 3. Build a resolved visual brief
 
 Resolve the following fields internally before writing the model-facing prompt:
 
 ```text
 theme:
 theme_type:
+style_variant:
 core_idea:
 primary_subject:
+primary_action:
+primary_prop:
 mood:
 recognition_cues:
 symbolic_elements:
 composition:
+framing:
+accent_policy:
+accent_color:
 aspect_ratio:
 must_avoid:
 ```
@@ -58,7 +74,7 @@ Keep `core_idea` to one sentence. Give every symbol a clear relationship to the 
 
 Use stable, established knowledge for familiar themes. Research first only when the subject is obscure, ambiguous, current, or depends on precise biographical, historical, cultural, or brand facts. Prefer authoritative or primary sources when research is necessary. Do not invent factual associations merely because they are easy to draw.
 
-### 3. Classify and simplify the theme
+### 4. Classify and simplify the theme
 
 Choose one primary type:
 
@@ -72,7 +88,7 @@ Choose one primary type:
 
 When a theme fits multiple types, choose the type that produces the clearest single subject and the fewest explanatory elements.
 
-### 4. Select 1–3 symbolic elements
+### 5. Select 1–3 symbolic elements
 
 Generate several candidates, then select only elements that score well on:
 
@@ -95,9 +111,9 @@ Reject:
 
 If the composition feels crowded, remove symbols before shrinking the empty space.
 
-### 5. Write the model-facing prompt
+### 6. Write the `rough-literary` model-facing prompt
 
-Write the final prompt in direct visual language. Substitute every bracketed field with resolved content and remove unused lines.
+Use this prompt only for `rough-literary`. For `bold-flat-accent`, use the prompt in its reference file instead. Write the final prompt in direct visual language. Substitute every bracketed field with resolved content and remove unused lines.
 
 ```text
 Use case: stylized-concept
@@ -135,9 +151,13 @@ Make the image feel like a rough literary notebook illustration: casually drawn,
 
 Do not rely on negative wording alone. State the desired positive appearance before the avoid list.
 
-### 6. Generate and inspect
+### 7. Generate and inspect
 
-Use the built-in image generation tool by default. After generation, inspect the actual image against all of these criteria:
+Use the built-in image generation tool by default.
+
+For `bold-flat-accent`, use the QA checklist and correction prompt in its reference file.
+
+For `rough-literary`, inspect the actual image against all of these criteria:
 
 - One unmistakable primary subject
 - Subject positioned near the lower center unless overridden
@@ -159,7 +179,7 @@ Use correction language such as:
 Keep the subject, pose, and symbolic elements unchanged. Simplify the image substantially, remove secondary details, increase empty white space to approximately 80%, and make the black marker contours rougher, more uneven, and less polished. Keep a pure white background with no gray shading or text.
 ```
 
-### 7. Deliver
+### 8. Deliver
 
 - Show generated previews inline.
 - For project-bound images, save the selected final asset in the workspace without overwriting an existing file unless explicitly requested.
@@ -172,8 +192,8 @@ When instructions compete, preserve them in this order:
 
 1. User's explicit requirements
 2. One clear primary subject
-3. Black-line-on-white visual identity
-4. Negative space and low information density
+3. The selected variant's white-background palette and rendering identity
+4. The selected variant's negative-space and density rules
 5. Recognizability and core expression
 6. Theme-specific meaning
 7. Symbolic elements

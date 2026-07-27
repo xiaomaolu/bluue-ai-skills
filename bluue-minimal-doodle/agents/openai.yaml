@@ -1,4 +1,4 @@
 interface:
   display_name: "Bluue Minimal Doodle"
-  short_description: "将人物、作品、概念、事件与品牌转译为极简黑白手绘文学插画"
-  default_prompt: "Use $bluue-minimal-doodle to turn my theme into a sparse black-and-white literary doodle illustration."
+  short_description: "将任意主题转译为黑白文学草图或单色强调的粗线扁平插画"
+  default_prompt: "Use $bluue-minimal-doodle with its default rough-literary style, or explicitly select the optional bold-flat-accent variant for one controlled accent color."
