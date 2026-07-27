@@ -1,5 +1,7 @@
 # Bluue AI Skills
 
+[**English**](./README.md) | [简体中文](./README.zh-CN.md)
+
 Open-source AI agent skills created by Bluue.
 
 ## Skills
