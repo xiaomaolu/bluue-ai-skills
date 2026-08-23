@@ -6,6 +6,38 @@ Open-source AI agent skills created by Bluue.
 
 ## Skills
 
+### social-content-engine
+
+A multilingual, cross-platform social-content engine for AI agents. It is installed as one skill bundle and internally handles routing, sparse-context enrichment, research, angle discovery, platform adaptation, writing, repurposing, hooks, style learning, and final quality review.
+
+Highlights:
+
+- works with sparse prompts instead of immediately producing generic copy
+- researches current topics only when freshness or factual precision requires it
+- supports X, LinkedIn, Instagram, Threads, Reddit, Facebook, TikTok/Douyin, YouTube, Xiaohongshu, Weibo, Telegram/Discord, plus a generic platform fallback
+- supports English, Simplified/Traditional Chinese, Vietnamese, Japanese, Korean, and other model-supported languages
+- transcreates across languages instead of defaulting to literal translation
+- separates facts, reports, rumors, opinions, and community signals
+- avoids invented first-person experience and fake authority
+- uses angle scoring, platform-native adaptation, bounded retries, and a review quality gate
+- includes multilingual anti-slop rules and evaluation cases
+
+Examples:
+
+```text
+Use $social-content-engine to write an X post about Apple's foldable iPhone.
+```
+
+```text
+使用 $social-content-engine 写一篇 LinkedIn，面向金融机构合规团队，解释 AI governance 为什么正在从政策走向运营控制。
+```
+
+```text
+Use $social-content-engine to turn this English LinkedIn post into natural Vietnamese Facebook copy. Do not translate literally.
+```
+
+See [`social-content-engine/README.md`](./social-content-engine/README.md) for architecture and supported workflows.
+
 ### bluue-minimal-doodle
 
 Turns people, works, concepts, events, places, objects, products, and brands into minimalist doodle illustrations. It ships as one skill with one default style and one optional style branch.
@@ -20,66 +52,21 @@ It supports:
 - optional reference images and independent variants
 - automatic visual QA and focused regeneration
 
-## Style variants
+#### Style variants
 
-Install only `bluue-minimal-doodle`. The two styles are internal variants of the same skill, not separate skills.
-
-### Visual comparison
-
-| `rough-literary` — default | `bold-flat-accent` — optional |
-|---|---|
-| <img src="./assets/examples/rough-literary-prediction-market.png" alt="Prediction market in the rough-literary style" width="480"> | <img src="./assets/examples/bold-flat-accent-bike-sharing.png" alt="Bike sharing in the bold-flat-accent style" width="480"> |
-| Rough black marker lines, high negative space, black and white, small symbolic elements. | Smooth thick outlines, deliberate solid-black shapes, a larger action group, and one controlled accent color. |
-
-### Which style should I choose?
+Install only `bluue-minimal-doodle`. The two styles are internal variants of the same skill.
 
 | What the user wants | Style |
 |---|---|
 | Black-and-white literary sketch, rough marker lines, lots of empty space | `rough-literary` |
 | Thick smooth outlines, flat black shapes, larger characters or objects, one accent color | `bold-flat-accent` |
 | No style specified | `rough-literary` |
-| Only “add some color” or “use a brand color” is specified | Choose a style explicitly; color alone does not switch branches |
 
-The skill should not ask about style on every request. It uses the default immediately unless the request is visually ambiguous. When a color request could materially change the rendering, use this concise clarification:
+Visual examples:
 
-```text
-This skill has two styles: rough-literary is the default black-and-white literary sketch; bold-flat-accent uses smooth thick outlines and one accent color. Which one do you want? If unspecified, I will use rough-literary.
-```
-
-Users can also use natural-language aliases:
-
-- “black-and-white literary sketch” or “黑白文学草图” → `rough-literary`
-- “bold flat single-accent style” or “粗线单色扁平风格” → `bold-flat-accent`
-
-### rough-literary
-
-This is the default. If the user does not choose a style, the skill produces a sparse black-and-white rough-marker literary doodle with ample negative space.
-
-```text
-Use $bluue-minimal-doodle to create an illustration about prediction markets.
-```
-
-The same request can be explicit:
-
-```text
-Use $bluue-minimal-doodle with style_variant rough-literary to illustrate Shakespeare.
-```
-
-### bold-flat-accent
-
-This optional branch uses smooth thick black outlines, deliberate solid-black shapes, a larger subject, and zero or one controlled accent color.
-
-```text
-Use $bluue-minimal-doodle with style_variant bold-flat-accent to illustrate bike sharing. Use warm orange as the only accent color and keep it below 15% of the image.
-```
-
-Brand-color example:
-
-```text
-Use $bluue-minimal-doodle with style_variant bold-flat-accent to illustrate Lululemon. Use accent_policy brand, one accent color only, and no logo or text.
-```
-
-Color alone does not activate the optional branch. Select `bold-flat-accent` explicitly when its full visual treatment is wanted.
+| `rough-literary` — default | `bold-flat-accent` — optional |
+|---|---|
+| <img src="./assets/examples/rough-literary-prediction-market.png" alt="Prediction market in the rough-literary style" width="480"> | <img src="./assets/examples/bold-flat-accent-bike-sharing.png" alt="Bike sharing in the bold-flat-accent style" width="480"> |
 
 ## Install
 
@@ -89,24 +76,20 @@ Clone the repository:
 git clone https://github.com/xiaomaolu/bluue-ai-skills.git
 ```
 
-Copy the skill into your Codex skills directory.
+Copy the skill you want into your Codex skills directory.
 
-PowerShell:
+### PowerShell
 
 ```powershell
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\social-content-engine" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
-macOS or Linux:
+### macOS / Linux
 
 ```bash
+cp -R ./bluue-ai-skills/social-content-engine ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
-```
-
-Invoke it with:
-
-```text
-Use $bluue-minimal-doodle to create a minimalist doodle about prediction markets.
 ```
 
 ## License
