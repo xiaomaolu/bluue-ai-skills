@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Content Engine"
+  short_description: "多语言跨平台社媒内容引擎：自动补上下文、研究、找角度、适配平台、写作与质检"
+  default_prompt: "Use $social-content-engine to turn my request into platform-native social content. Enrich sparse context, research current topics when needed, preserve my language and preferences, and return one strongest reviewed result."
