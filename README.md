@@ -68,6 +68,21 @@ Visual examples:
 |---|---|
 | <img src="./assets/examples/rough-literary-prediction-market.png" alt="Prediction market in the rough-literary style" width="480"> | <img src="./assets/examples/bold-flat-accent-bike-sharing.png" alt="Bike sharing in the bold-flat-accent style" width="480"> |
 
+### bluue-ui-design
+
+A product UI design, implementation, revision, and audit skill built around Bluue's restrained interface preferences.
+
+It helps agents:
+
+- preserve the existing product system, real content, and authorized scope
+- prioritize alignment, readable density, and clear information hierarchy
+- reduce redundant explanatory copy and frame-within-frame composition
+- use icons purposefully, keep colors restrained, and avoid unnecessary shadows or gradients
+- build real interactions and verify desktop and mobile results in the rendered interface
+- report a concise color, typography, layout, and style summary after each reviewable version
+
+Use it for Figma or screenshot implementation, visual refinement, content replacement, localization, responsive UI, and product-interface QA.
+
 ## Install
 
 Clone the repository:
@@ -83,6 +98,7 @@ Copy the skill you want into your Codex skills directory.
 ```powershell
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\social-content-engine" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -90,6 +106,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destin
 ```bash
 cp -R ./bluue-ai-skills/social-content-engine ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
+cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 ```
 
 ## License

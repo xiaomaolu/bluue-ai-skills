@@ -68,6 +68,21 @@ Bluue 创建的开源 AI Agent Skills。
 |---|---|
 | <img src="./assets/examples/rough-literary-prediction-market.png" alt="rough-literary 风格的预测市场插画" width="480"> | <img src="./assets/examples/bold-flat-accent-bike-sharing.png" alt="bold-flat-accent 风格的共享单车插画" width="480"> |
 
+### bluue-ui-design
+
+一个基于 Bluue 克制型界面偏好的产品 UI 设计、实现、修改与审查 Skill。
+
+它会帮助 Agent：
+
+- 保留现有产品系统、真实内容和用户授权范围
+- 优先处理对齐、可读的信息密度与清晰层级
+- 减少重复描述文案与框套框结构
+- 有目的地使用图标，克制颜色数量，避免非必要阴影与渐变
+- 实现真实交互，并在渲染后的桌面端与移动端中验证结果
+- 每个可测试版本完成后，简要总结颜色、排版、布局与风格
+
+适用于 Figma 或截图还原、视觉优化、内容替换、本地化、响应式 UI 与产品界面质检。
+
 ## 安装
 
 克隆仓库：
@@ -83,6 +98,7 @@ git clone https://github.com/xiaomaolu/bluue-ai-skills.git
 ```powershell
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\social-content-engine" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -90,6 +106,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destin
 ```bash
 cp -R ./bluue-ai-skills/social-content-engine ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
+cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 ```
 
 ## 许可证
