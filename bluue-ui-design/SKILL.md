@@ -1,6 +1,6 @@
 ---
 name: bluue-ui-design
-description: "Design, implement, revise, or audit product UI using Bluue's preferences: preserve the existing system and essential content, enforce alignment, minimize redundant explanatory copy and container noise, use icons purposefully, build real interactions, and verify the rendered result. Use for Figma or screenshot implementation, visual polish, content replacement, localization, responsive UI, and product-interface QA. Do not use for illustration-only or brand-identity work without a product interface."
+description: "Design, implement, revise, or audit product UI using Bluue's preferences: preserve the existing system and essential content, enforce global alignment and hierarchy, simplify information architecture, minimize redundant copy and visual noise, build real interactions, and verify the rendered result. Use for Figma or screenshot implementation, visual polish, content replacement, localization, responsive UI, and product-interface QA. Do not use for illustration-only or brand-identity work without a product interface."
 ---
 
 # Bluue UI Design
@@ -50,6 +50,13 @@ Identify the authoritative reference, the existing design system, the allowed sc
 - Represent the actual product workflow and specific capabilities rather than substituting generic marketing cards.
 - Use correct brand, platform, provider, or model icons when those identities matter. Do not use arbitrary placeholders or mismatched icons.
 
+### Structure interaction and navigation
+
+- Decide the functional hierarchy before arranging controls. Keep frequent, task-critical actions on the primary surface; move supporting or less-frequent actions into secondary navigation, menus, drawers, or detail views; reserve tertiary levels for configuration, administration, and rare tasks.
+- Do not flatten every available feature into one screen. Use progressive disclosure to reduce cognitive load without hiding the user's core task or current status.
+- Keep interaction sequences continuous: preserve relevant context and selections, make the next action evident, provide a clear return path, and avoid dead ends or abrupt jumps between levels.
+- Judge navigation depth by task frequency, importance, and dependency—not by the desire to make every capability immediately visible.
+
 ### Use motion deliberately
 
 - Use animation to clarify state changes, hierarchy, progress, reordering, reveal, or completion—not as ambient decoration.
@@ -65,7 +72,9 @@ Aim for a simple, polished, product-oriented interface with clear hierarchy and 
 
 - Treat alignment as a primary design constraint. Major headings, toolbars, content grids, side panels, and footer actions should share deliberate edge and baseline relationships.
 - Establish a small gutter and spacing system, then reuse it. Avoid near-matching padding values that create subtle drift between adjacent regions.
+- Distinguish spacing within a module from spacing between different categories or modules. Related elements should feel grouped; separate groups should have visibly more space or a structural divider. As a practical check, inter-group spacing should usually be greater than internal spacing rather than nearly identical.
 - Align icons optically with text, not only mathematically. Keep control heights, label baselines, column starts, and repeated row anatomy consistent.
+- Check the interface first from the full-page or full-viewport perspective, then inspect local component alignment. A row can be internally tidy while still drifting from the page grid.
 - Check alignment in the rendered desktop and mobile interface; source-code symmetry is not proof of visual alignment.
 
 ### Color
@@ -81,13 +90,17 @@ Aim for a simple, polished, product-oriented interface with clear hierarchy and 
 - When a shadow is necessary, keep it subtle and consistent.
 - Use gradients sparingly. A gradient must serve brand expression, a controlled focal point, data meaning, or state communication; it is not the default way to make a design look polished.
 - Avoid decorative glow, glass effects, heavy blur, excessive rounding, and ornamental layers when they do not improve comprehension.
+- Do not add dots, bars, underlines, badges, corner marks, or floating shapes merely to make an area look designed. Every visible mark must communicate function, hierarchy, identity, or state; remove it when it repeats information already shown more clearly elsewhere.
+- By default, do not combine a same-hue vertical accent bar with a low-opacity block of that hue as a generic selected, active, or highlighted treatment. Choose one primary signal—such as a tint, border, type change, icon, checkmark, or position—and add another only when an established design system, complex state, or accessibility requirement justifies the redundancy.
 - Reduce frame-within-frame composition. Prefer open surfaces, shared alignment, whitespace, tonal bands, dividers, and a single necessary boundary over nested cards and repeated bordered wrappers.
 - Inputs, data tables, calendars, modals, and true grouped controls may retain boundaries when those boundaries improve scanning, editing, or interaction clarity.
 
 ### Typography, icons, and density
 
 - Preserve the product's existing font unless the task explicitly changes it. Resolve missing fonts rather than silently substituting a visibly different typeface.
-- Keep type scale, weight, line height, casing, and alignment consistent.
+- Keep the type scale deliberately small and role-based. The same semantic level should use the same size, weight, line height, casing, and alignment across the interface.
+- Define a restrained radius hierarchy and reuse it by component family. Small controls, fields, cards, overlays, and nested elements should not each introduce arbitrary near-matching radii.
+- Keep icon sizes, control heights, border weights, and internal padding consistent with the same component level; visual hierarchy should remain coherent when the whole screen is viewed at once.
 - Avoid unnecessary all-caps English, especially inside Chinese interfaces; retain legitimate brands, acronyms, and model names.
 - Prefer clear outline icons when no existing icon language overrides this preference. Keep stroke weight, optical size, alignment, and metaphor consistent.
 - Use a familiar icon in place of a visible label when the meaning is conventional and context is sufficient. Use `icon + short label` for important or less familiar actions; do not replace clarity with icon guessing.
@@ -118,12 +131,13 @@ Do not force Chinese onto a different target locale unless requested.
 
 1. Inspect the exact reference, target route, existing components, assets, design tokens, localization structure, and current behavior.
 2. State or internally establish what must remain unchanged and what is allowed to change.
-3. Establish the alignment grid, content priority, and allowed container layers before styling individual components.
-4. Implement the smallest coherent change that fulfills the product and visual requirement.
-5. Audit repeated descriptions, nested frames, icon consistency, and edge/baseline alignment.
-6. Exercise all visible interactions and verify that related states remain synchronized.
-7. Review the rendered UI against the authoritative reference at the intended desktop and mobile sizes.
-8. Fix visual, interaction, accessibility, localization, routing, and console issues before declaring completion.
+3. Establish the task flow and primary, secondary, and tertiary functional hierarchy before deciding what belongs on the main screen.
+4. Establish the alignment grid, spacing hierarchy, content priority, radius and type tokens, and allowed container layers before styling individual components.
+5. Implement the smallest coherent change that fulfills the product and visual requirement.
+6. Audit repeated descriptions, nested frames, decorative marks, redundant selection signals, token consistency, module spacing, and edge/baseline alignment.
+7. Exercise all visible interactions and verify that related states remain synchronized across navigation levels.
+8. Review the whole rendered UI first, then local details, against the authoritative reference at the intended desktop and mobile sizes.
+9. Fix visual, interaction, accessibility, localization, routing, and console issues before declaring completion.
 
 Research comparable products or reusable resources before coding when the task is exploratory or the user asks for a plan first. Research does not authorize copying another product's identity or replacing the supplied reference.
 
@@ -154,7 +168,8 @@ Before reporting completion, verify as applicable:
 - desktop and mobile rendering, including overflow behavior;
 - navigation destinations and other affected routes;
 - missing fonts, incorrect icons, inconsistent casing, excess colors, unjustified shadows, and decorative gradients;
-- drifting edges or baselines, excessive explanatory copy, repeated visible labels, and unnecessary nested frames;
+- drifting page-level edges or baselines, inconsistent font sizes or radii, weak separation between module categories, excessive explanatory copy, repeated visible labels, redundant selection treatments, meaningless decorative marks, and unnecessary nested frames;
+- whether primary, secondary, and tertiary functions are placed at appropriate navigation levels and form a continuous task flow;
 - all visible language layers when localization is in scope;
 - keyboard focus, semantic state, reduced motion, and browser console errors or warnings.
 
@@ -169,6 +184,11 @@ If the user says the design has not changed or does not match, return to the exa
 - Do not substitute an approximately similar component for the specified reference.
 - Do not fabricate missing product visuals or unverified capabilities.
 - Do not use unnecessary shadows, habitual gradients, or an uncontrolled number of colors.
+- Do not default to the combination of a same-hue vertical bar and a translucent same-hue block for selection or emphasis.
+- Do not introduce arbitrary radius, type-size, icon-size, control-height, or spacing values that weaken the shared hierarchy.
+- Do not crowd different module categories together with nearly identical internal and external spacing.
+- Do not add decorative dots, bars, badges, or shapes without a functional, hierarchical, identity, or state purpose.
 - Do not stack cards, bordered panels, and rounded wrappers when alignment, spacing, dividers, or icons communicate the structure more clearly.
+- Do not place every feature on the primary surface when secondary or tertiary disclosure would make the workflow clearer.
 - Do not ship mismatched icons, missing fonts, hard-coded wrong-language text, or page-level mobile overflow.
 - Do not declare the UI finished without inspecting and operating the rendered result.

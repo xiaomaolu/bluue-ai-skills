@@ -76,6 +76,7 @@ It helps agents:
 
 - preserve the existing product system, real content, and authorized scope
 - prioritize alignment, readable density, and clear information hierarchy
+- organize primary, secondary, and tertiary functions into coherent task flows instead of crowding one surface
 - reduce redundant explanatory copy and frame-within-frame composition
 - use icons purposefully, keep colors restrained, and avoid unnecessary shadows or gradients
 - build real interactions and verify desktop and mobile results in the rendered interface
