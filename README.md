@@ -78,7 +78,8 @@ It helps agents:
 - prioritize alignment, readable density, and clear information hierarchy
 - organize primary, secondary, and tertiary functions into coherent task flows instead of crowding one surface
 - reduce redundant explanatory copy and frame-within-frame composition
-- use icons purposefully, keep colors restrained, and avoid unnecessary shadows or gradients
+- avoid generic AI/SaaS defaults such as automatic purple palettes, unjustified gradients, uniform oversized radii and padding, template heroes, fake copy, equal-card grids, and shadow-heavy surfaces
+- treat those patterns as contextual preferences rather than mechanical bans, while preserving intentional brand systems and references
 - build real interactions and verify desktop and mobile results in the rendered interface
 - report a concise color, typography, layout, and style summary after each reviewable version
 

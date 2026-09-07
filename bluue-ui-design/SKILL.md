@@ -1,6 +1,6 @@
 ---
 name: bluue-ui-design
-description: "Design, implement, revise, or audit product UI using Bluue's preferences: preserve the existing system and essential content, enforce global alignment and hierarchy, simplify information architecture, minimize redundant copy and visual noise, build real interactions, and verify the rendered result. Use for Figma or screenshot implementation, visual polish, content replacement, localization, responsive UI, and product-interface QA. Do not use for illustration-only or brand-identity work without a product interface."
+description: "Design, implement, revise, or audit product UI using Bluue's preferences: preserve the existing system and essential content, enforce global alignment and hierarchy, avoid generic AI/SaaS-template defaults through intentional color, depth, radius, density, copy, and content-driven layout decisions, build real interactions, and verify the rendered result. Use for Figma or screenshot implementation, visual polish, content replacement, localization, responsive UI, and product-interface QA. Do not use for illustration-only or brand-identity work without a product interface."
 ---
 
 # Bluue UI Design
@@ -68,6 +68,21 @@ Identify the authoritative reference, the existing design system, the allowed sc
 
 Aim for a simple, polished, product-oriented interface with clear hierarchy and low visual noise.
 
+### Avoid statistical-default aesthetics
+
+Treat the following as Bluue's default preferences and review lenses, not universal bans. Apply them in proportion to the task. The user's explicit direction, an authoritative reference, accessibility, product needs, and an established design system may justify any of these treatments. If a project already uses one intentionally, preserve it unless the task authorizes a change; refine inconsistent use instead of erasing the product's identity.
+
+For new UI without usable brand tokens, make a deliberate choice based on the product, audience, content, and interaction model. Do not accept the most common generated pattern merely because it is easy to produce.
+
+1. **Do not default to purple or indigo.** Purple-500, indigo-600, and similar blue-purple palettes are common generated-interface defaults, not neutral decisions. Use the project's brand and semantic tokens first. When none exist, choose and document a palette that fits the product's character rather than automatically signaling generic “modern technology.” A deliberate purple palette remains valid when the brand or content supports it.
+2. **Do not use gradients as automatic polish.** Avoid habitual gradient hero backgrounds, gradient buttons, and `bg-clip-text` headlines. Gradients must have a brand, focal, spatial, data, or state purpose and sufficient text contrast. Prefer flat surfaces when they integrate better with the system and reduce noise; use subtle system-defined gradients when there is a clear rationale.
+3. **Do not round everything to the same large radius.** Radius is a hierarchy and a component-family token. Use smaller radii for compact controls and tags, larger radii for containers or overlays when appropriate, and sharper geometry when the product voice calls for precision. Avoid applying `rounded-2xl` or an equivalent maximum radius indiscriminately to cards, buttons, fields, and images.
+4. **Do not begin from a generic centered SaaS hero.** A centered headline, supporting paragraph, two CTAs, and decorative background is not a default page architecture. Start with the product's actual content and the user's primary task. Let the first screen demonstrate purpose, value, workflow, or evidence in the form most appropriate to that product.
+5. **Do not design against lorem-ipsum-shaped content.** Use real content when available. Otherwise use realistic, domain-specific sample data with representative length, variability, dates, amounts, names, statuses, long words, and failure cases. Placeholder copy must stress the layout rather than hide wrapping, truncation, and overflow problems. Avoid generic labels such as “Welcome to our platform” and “Feature 1/2/3.”
+6. **Do not make every container uniformly spacious.** Repeated `p-8`, `p-12`, or equivalent oversized padding can erase grouping and waste limited space. Use a spacing scale with intentional contrast: related elements closer, separate groups farther apart, and density adapted to the device and task. Dashboards and mobile flows should preserve useful information density rather than imitate spacious marketing screenshots.
+7. **Do not use equal card grids as a universal container.** A three-column grid of identical cards implies equal importance. Express real priority and reading order through purpose-driven composition: asymmetric regions, lists, tables, timelines, split views, progressive disclosure, or a dominant item with supporting content when those structures fit better. Use an equal grid only when the items are genuinely peers.
+8. **Do not create hierarchy by stacking shadows.** Default to borders, surface tone, spacing, and contrast for separation. Reserve subtle, consistent shadows for meaningful elevation such as overlays, menus, drag state, or an explicitly defined system level. Avoid large blurred shadows that compete with content and increase rendering cost, especially on scrolling surfaces and lower-end devices.
+
 ### Alignment and spatial system
 
 - Treat alignment as a primary design constraint. Major headings, toolbars, content grids, side panels, and footer actions should share deliberate edge and baseline relationships.
@@ -79,17 +94,15 @@ Aim for a simple, polished, product-oriented interface with clear hierarchy and 
 
 ### Color
 
-- Do not enforce a universal hue or fixed color value. Derive color from the brand, product, content, and current design system.
+- Derive color from the brand, product, content, and current design system; the anti-default guidance above governs cases without an established palette.
 - Keep the number of colors restrained within one UI. Establish a coherent primary, supporting, neutral, and semantic-state palette instead of assigning unrelated colors to individual modules.
 - Use color to express hierarchy, identity, focus, and state; do not make every element compete for attention.
 - Do not turn project-specific directions such as a particular blue, avoiding black, or a warm green palette into universal rules.
 
 ### Depth and effects
 
-- Do not use shadows unless they communicate necessary elevation, overlay, drag state, or separation that borders, surfaces, spacing, and contrast cannot express clearly.
-- When a shadow is necessary, keep it subtle and consistent.
-- Use gradients sparingly. A gradient must serve brand expression, a controlled focal point, data meaning, or state communication; it is not the default way to make a design look polished.
-- Avoid decorative glow, glass effects, heavy blur, excessive rounding, and ornamental layers when they do not improve comprehension.
+- Follow the gradient, shadow, and radius decisions in the anti-default guidance above. Keep any justified effect restrained and consistent with the design system.
+- Avoid decorative glow, glass effects, heavy blur, and ornamental layers when they do not improve comprehension.
 - Do not add dots, bars, underlines, badges, corner marks, or floating shapes merely to make an area look designed. Every visible mark must communicate function, hierarchy, identity, or state; remove it when it repeats information already shown more clearly elsewhere.
 - By default, do not combine a same-hue vertical accent bar with a low-opacity block of that hue as a generic selected, active, or highlighted treatment. Choose one primary signal—such as a tint, border, type change, icon, checkmark, or position—and add another only when an established design system, complex state, or accessibility requirement justifies the redundancy.
 - Reduce frame-within-frame composition. Prefer open surfaces, shared alignment, whitespace, tonal bands, dividers, and a single necessary boundary over nested cards and repeated bordered wrappers.
@@ -99,7 +112,6 @@ Aim for a simple, polished, product-oriented interface with clear hierarchy and 
 
 - Preserve the product's existing font unless the task explicitly changes it. Resolve missing fonts rather than silently substituting a visibly different typeface.
 - Keep the type scale deliberately small and role-based. The same semantic level should use the same size, weight, line height, casing, and alignment across the interface.
-- Define a restrained radius hierarchy and reuse it by component family. Small controls, fields, cards, overlays, and nested elements should not each introduce arbitrary near-matching radii.
 - Keep icon sizes, control heights, border weights, and internal padding consistent with the same component level; visual hierarchy should remain coherent when the whole screen is viewed at once.
 - Avoid unnecessary all-caps English, especially inside Chinese interfaces; retain legitimate brands, acronyms, and model names.
 - Prefer clear outline icons when no existing icon language overrides this preference. Keep stroke weight, optical size, alignment, and metaphor consistent.
@@ -134,7 +146,7 @@ Do not force Chinese onto a different target locale unless requested.
 3. Establish the task flow and primary, secondary, and tertiary functional hierarchy before deciding what belongs on the main screen.
 4. Establish the alignment grid, spacing hierarchy, content priority, radius and type tokens, and allowed container layers before styling individual components.
 5. Implement the smallest coherent change that fulfills the product and visual requirement.
-6. Audit repeated descriptions, nested frames, decorative marks, redundant selection signals, token consistency, module spacing, and edge/baseline alignment.
+6. Audit the eight anti-default failure modes where relevant, plus repeated descriptions, nested frames, decorative marks, redundant selection signals, token consistency, module spacing, and edge/baseline alignment.
 7. Exercise all visible interactions and verify that related states remain synchronized across navigation levels.
 8. Review the whole rendered UI first, then local details, against the authoritative reference at the intended desktop and mobile sizes.
 9. Fix visual, interaction, accessibility, localization, routing, and console issues before declaring completion.
@@ -177,6 +189,7 @@ If the user says the design has not changed or does not match, return to the exa
 
 ## Prohibited Shortcuts
 
+- Do not treat Bluue's anti-default preferences as mechanical bans or use them to overwrite an intentional brand system, authoritative reference, or explicit user choice.
 - Do not use a screenshot as the implemented interface.
 - Do not create fake interaction or controls without meaningful state changes.
 - Do not remove business content, warnings, or task-critical guidance under the guise of minimalism; reducing redundant interface explanation is encouraged.
