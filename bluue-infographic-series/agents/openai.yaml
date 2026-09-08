@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bluue Infographic Series"
+  short_description: "将长篇内容、报告、数据和流程转译为单张或系列结构化信息图"
+  default_prompt: "Use $bluue-infographic-series to turn the supplied content into a readable, accurate infographic or cohesive multi-image series. Default to 9:16 and preserve the source language unless the user asks otherwise."
