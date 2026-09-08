@@ -68,6 +68,29 @@ Visual examples:
 |---|---|
 | <img src="./assets/examples/rough-literary-prediction-market.png" alt="Prediction market in the rough-literary style" width="480"> | <img src="./assets/examples/bold-flat-accent-bike-sharing.png" alt="Bike sharing in the bold-flat-accent style" width="480"> |
 
+### bluue-infographic-series
+
+Turns long-form content, reports, structured notes, concepts, processes, and data into a polished infographic or a coherent multi-image infographic series.
+
+It helps agents:
+
+- preserve the source language by default, while using English when no substantial source language is provided
+- default to 9:16 unless the user specifies another format
+- classify content into data, explainer, summary, process, or general visual structures
+- split dense long-form material across multiple frames instead of overloading one canvas
+- keep one coherent art direction across a series while varying composition frame by frame
+- work with restrained icons, shapes, diagrams, photos, collage fragments, texture, illustration, and charts
+- support diverse style families such as minimal, dark data, editorial, collage, Bauhaus, retro, art deco, punk, acid, Japanese graphic design, brutalist, and luxury modern
+- lock a restrained palette across the series
+- treat text fidelity as a release gate, especially for names, dates, figures, units, legal/technical terms, and multilingual output
+- prefer deterministic typography when exact text cannot be reliably preserved through pure image generation
+
+Example:
+
+```text
+Use $bluue-infographic-series to turn this research report into a 5-frame 9:16 visual series. Keep the source language, use one consistent editorial style, and make each frame focus on one takeaway.
+```
+
 ### bluue-ui-design
 
 A product UI design, implementation, revision, and audit skill built around Bluue's restrained interface preferences.
@@ -100,6 +123,7 @@ Copy the skill you want into your Codex skills directory.
 ```powershell
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\social-content-engine" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-infographic-series" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
@@ -108,6 +132,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination
 ```bash
 cp -R ./bluue-ai-skills/social-content-engine ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
+cp -R ./bluue-ai-skills/bluue-infographic-series ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 ```
 
