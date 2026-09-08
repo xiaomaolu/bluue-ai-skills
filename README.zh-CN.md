@@ -68,6 +68,29 @@ Bluue 创建的开源 AI Agent Skills。
 |---|---|
 | <img src="./assets/examples/rough-literary-prediction-market.png" alt="rough-literary 风格的预测市场插画" width="480"> | <img src="./assets/examples/bold-flat-accent-bike-sharing.png" alt="bold-flat-accent 风格的共享单车插画" width="480"> |
 
+### bluue-infographic-series
+
+将长篇内容、研究报告、结构化笔记、概念、流程和数据转译为单张高质量信息图，或一组风格统一的系列信息图。
+
+核心能力：
+
+- 用户提供了长篇内容时，默认保留原文语言；没有明确源语言时使用英文
+- 默认尺寸为 9:16，用户可以覆盖为其他比例
+- 自动判断内容更适合数据、科普、总结、流程或一般信息图结构
+- 长内容优先拆成多张，避免一张图塞入过多信息
+- 同一系列锁定一套主视觉，允许每张使用不同构图，避免模板重复
+- 可以克制地使用图形、形状、Icon、图表、照片、拼贴、纹理和插画元素
+- 支持简约、暗黑数据、杂志、拼贴、包豪斯、复古、装饰艺术、朋克、酸性、日式、粗野主义、现代奢华等多种风格方向
+- 系列主色调保持克制，避免无意义的多色堆叠
+- 把文字准确度作为交付门槛，尤其关注名称、日期、数字、单位、法律与技术术语、多语言内容
+- 当纯生图难以保证关键文字准确时，优先使用 HTML / SVG / Canvas 等确定性排版方案
+
+示例：
+
+```text
+使用 $bluue-infographic-series 把这篇研究报告整理成 5 张 9:16 系列信息图。保留原文语言，使用统一的杂志编辑风格，每张只讲一个重点。
+```
+
 ### bluue-ui-design
 
 一个基于 Bluue 克制型界面偏好的产品 UI 设计、实现、修改与审查 Skill。
@@ -100,6 +123,7 @@ git clone https://github.com/xiaomaolu/bluue-ai-skills.git
 ```powershell
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\social-content-engine" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-infographic-series" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
@@ -108,6 +132,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination
 ```bash
 cp -R ./bluue-ai-skills/social-content-engine ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
+cp -R ./bluue-ai-skills/bluue-infographic-series ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 ```
 
