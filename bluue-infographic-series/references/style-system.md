@@ -105,6 +105,33 @@ Use these as recommendations, not fixed rules:
 | process | diagrammatic, international, Bauhaus, minimal, brutalist |
 | general | editorial, collage, retro, punk, acid, luxury modern |
 
+## Semantic primitives before icons
+
+Choose the visual structure from the meaning before choosing an icon set. The primary graphic should expose how the information behaves:
+
+| Meaning | Prefer |
+|---|---|
+| time, state change, continuous monitoring | timeline, event stream, pulse, state transition |
+| ownership, dependency, ecosystem | topology, weighted edges, nested nodes, clusters |
+| anomaly, risk, alert intensity | threshold line, outlier points, range band, halo, signal stem |
+| process, handoff, approval | path, lanes, gates, directional sequence |
+| hierarchy, control, containment | scale, position, nesting, spatial containment |
+| comparison, performance | aligned bars, dots, slopes, intervals, split fields |
+
+This is especially important for finance, compliance, AI, and technology subjects. Avoid turning them into a generic cyber dashboard made of glowing rings, stock line icons, and UI chrome. Prefer report-grade diagrams, disciplined hairline geometry, restrained markers, and visible relationships.
+
+Before adding an icon, test it:
+
+1. Does the literal object matter to the message?
+2. Would the category or function be ambiguous without it?
+3. Does it communicate faster than the timeline, topology, threshold, path, hierarchy, or comparison already present?
+
+If the answer is no, remove it. Do not use an icon library as default decoration.
+
+Avoid stock people, buildings, documents, shields, warning triangles, checkmarks, robot heads, and AI brains unless the literal object is necessary. Do not enclose every symbol in a circle, card, or glow ring. A circle is justified when it encodes state, cycle, orbit, percentage, or another meaningful relationship—not merely because it makes the element look like an interface button.
+
+When an icon is necessary, keep it small and secondary, and use one custom-feeling family with consistent geometry, stroke, corner behavior, and abstraction. The diagram must remain understandable through its relationships even if the icons are hidden.
+
 ## Reference-image extraction
 
 When the user supplies references, extract the design logic instead of copying surface details mechanically.
@@ -120,7 +147,9 @@ grid:
 negative space:
 accent palette:
 chart style:
-icon style:
+visual primitive priority:
+icon style or none:
+forbidden stock motifs:
 image treatment:
 material / texture:
 border / radius behavior:
@@ -161,11 +190,14 @@ Before generating later frames, verify:
 - same palette logic
 - same type character
 - same line weight
-- same icon family
+- same visual-primitive logic
+- same icon family or the same deliberate no-icon policy
 - same chart language
 - same image treatment
 - same texture level
 - same overall contrast
 - same degree of minimalism or expressiveness
+
+Also verify that diagrams encode real relationships or states, that stock-icon shorthand has not replaced the information architecture, and that repeated circular containers carry meaning rather than decoration.
 
 A frame that looks independently attractive but belongs to a different design universe is a failure.

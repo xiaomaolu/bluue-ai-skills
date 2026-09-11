@@ -24,7 +24,7 @@ Use these defaults unless the user overrides them:
 - Palette: restrained; normally one base, one neutral/text system, and one accent family
 - Image density: one primary message per frame
 - Text density: sparse; split rather than cram
-- Visual assets: icons, shapes, charts, diagrams, photos, collage fragments, patterns, texture, and illustration are allowed when they improve understanding
+- Visual assets: prefer data-native and relationship-native forms such as charts, topology, timelines, thresholds, paths, and spatial hierarchy; use icons only when they communicate faster than the native structure
 - User questions: ask only when uncertainty would materially change the output
 
 Accept natural-language requests. Do not require the user to provide a parameter object.
@@ -38,9 +38,10 @@ Accept natural-language requests. Do not require the user to provide a parameter
 5. **Do not invent data.** Use supplied or researched facts only. Clearly label illustrative values.
 6. **Charts must be truthful.** Geometry, order, proportions, and units must correspond to the data.
 7. **Visual decoration stays subordinate to comprehension.** Do not let texture, photography, collage, gradients, icons, or illustration compete with the message.
-8. **Default to 9:16.** Use another ratio only when the user requests it or the target surface clearly requires it.
-9. **Preserve language intentionally.** Do not translate supplied content unless the user asks or the output language is explicitly changed.
-10. **Generate frames separately.** Never return a contact sheet or collage of the series unless the user explicitly asks for one.
+8. **Do not default to stock-icon shorthand.** Avoid icon-per-bullet layouts, rows of circular icon badges, and repeated avatar, building, document, shield, robot-head, AI-brain, checkmark, or warning-triangle symbols when the underlying system can be shown directly.
+9. **Default to 9:16.** Use another ratio only when the user requests it or the target surface clearly requires it.
+10. **Preserve language intentionally.** Do not translate supplied content unless the user asks or the output language is explicitly changed.
+11. **Generate frames separately.** Never return a contact sheet or collage of the series unless the user explicitly asks for one.
 
 ## Workflow
 
@@ -242,7 +243,9 @@ grid_and_alignment:
 card_shape_or_no_cards:
 line_weight:
 chart_language:
-icon_language:
+visual_primitive_priority:
+icon_language_or_none:
+forbidden_stock_motifs:
 image_treatment:
 texture_policy:
 lighting_or_gradient_policy:
@@ -292,19 +295,29 @@ For high-stakes or text-dense work, prefer a deterministic typography path when 
 
 ### 9. Choose the visual vocabulary
 
-Use visual elements only when they support the message:
+Start with the semantic structure of the information, not an icon library. Map the meaning to a native visual primitive:
 
-- shapes to establish hierarchy or encode categories
-- icons for recognizable functions or repeated labels
-- lines and arrows for relationships and sequence
-- charts for quantitative evidence
-- photos for people, places, products, or documentary context
-- collage fragments for editorial or expressive framing
-- illustration for concepts that need simplification
-- textures for atmosphere and material character
-- patterns for low-contrast structure
+- time, state change, and continuous monitoring → timeline, event stream, pulse, or state transition
+- ownership, dependency, and ecosystems → topology, weighted edges, nested nodes, or clustered relationships
+- anomaly, risk, and alert intensity → threshold line, outlier marks, range band, halo, or restrained signal stem
+- process and handoff → path, lanes, gates, or directional sequence
+- hierarchy and control → scale, position, nesting, or containment
+- comparison and performance → aligned bars, dots, slopes, intervals, or split fields
+- categories → restrained shapes, color encoding, or labels
+- quantitative evidence → truthful charts with corresponding geometry, order, proportions, and units
+- people, places, products, or documentary context → photography or illustration when the literal subject matters
+- atmosphere → low-contrast texture or pattern only after the information structure is clear
 
-Prefer one dominant visual device per frame. Avoid decorating every module independently.
+Use an icon only when removing it would make the meaning slower to recognize or genuinely ambiguous. When icons are necessary:
+
+- keep them secondary to the encoded structure and text
+- construct one coherent icon family with the same geometry, stroke, corner logic, and abstraction level
+- use a small icon as a functional label rather than as the main visual concept
+- do not place every icon inside a circle, card, glow ring, or decorative badge unless that container encodes state, cycle, orbit, percentage, or another real relationship
+
+Reject these default treatments: icon-per-bullet layouts; repeated stock people, buildings, documents, shields, warning triangles, checkmarks, robot heads, or AI brains; glowing circular badges; mixed pictogram metaphors; and decorative node clutter. If the first draft relies on them, replace them with the underlying timeline, topology, threshold, path, hierarchy, or comparison structure.
+
+Prefer one dominant visual device per frame. Avoid decorating every module independently. In the model-facing prompt, name the positive replacement, not only the prohibition—for example, request an ownership topology with weighted edges instead of merely saying “no building icons.”
 
 ### 10. Write the model-facing prompt
 
@@ -366,14 +379,18 @@ Check:
 - style matches the locked art direction
 - palette remains controlled
 - decorative elements stay subordinate
+- diagrams encode relationships, sequence, thresholds, or hierarchy rather than merely decorating labels
 - composition differs appropriately from adjacent series frames
 - no generic dashboard feel unless the user explicitly requested it
-- no unnecessary icons, gradients, shadows, or cards
+- no stock-icon shorthand where a data-native or relationship-native form would communicate better
+- no repeated circular icon containers unless the circle carries encoded meaning
+- icons, if present, share one construction logic and remain secondary
+- no unnecessary gradients, shadows, or cards
 
 #### Series consistency
 - same typography character
 - same palette logic
-- same line and icon language
+- same visual-primitive, line, and icon-or-no-icon logic
 - same image / illustration treatment
 - same overall sophistication level
 
