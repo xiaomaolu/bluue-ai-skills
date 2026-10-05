@@ -108,6 +108,23 @@ It helps agents:
 
 Use it for Figma or screenshot implementation, visual refinement, content replacement, localization, responsive UI, and product-interface QA.
 
+### blyue-web-design
+
+A content-first web design workflow adapted from @blyue's web design methodology. It turns page goals and real content into visual direction, typography, layout, semantic design tokens, responsive implementation, and focused verification.
+
+- covers new websites, landing pages, application interfaces, dashboards, and explicitly requested redesigns
+- treats numerical scales and aesthetic rules as contextual defaults while preserving brand systems, required content, and task scope
+- includes guidance for Chinese typography, accessible components, meaningful motion, and proportionate validation
+- preserves the complete source methodology as an on-demand reference
+
+Use this skill to establish a page's design direction and system. Use `bluue-ui-design` for reference implementation and refinements within an existing product interface.
+
+```text
+Use $blyue-web-design to design this landing page. Check the assumptions first, then define the visual direction and implement a responsive page using the real content.
+```
+
+See [`blyue-web-design/SKILL.md`](./blyue-web-design/SKILL.md).
+
 ## Install
 
 Clone the repository:
@@ -125,6 +142,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\social-content-engine" -Desti
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-infographic-series" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blyue-web-design" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -134,6 +152,7 @@ cp -R ./bluue-ai-skills/social-content-engine ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-infographic-series ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
+cp -R ./bluue-ai-skills/blyue-web-design ~/.codex/skills/
 ```
 
 ## License

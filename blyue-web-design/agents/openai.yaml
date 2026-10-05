@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blyue 网页设计方法论"
+  short_description: "从真实内容和页面目标出发，建立视觉系统并完成响应式网页设计与验收"
+  default_prompt: "使用 $blyue-web-design，先检查需求前提，再依据内容和品牌完成页面设计、实现与必要验收。"

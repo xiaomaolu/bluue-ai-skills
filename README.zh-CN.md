@@ -108,6 +108,23 @@ Bluue 创建的开源 AI Agent Skills。
 
 适用于 Figma 或截图还原、视觉优化、内容替换、本地化、响应式 UI 与产品界面质检。
 
+### blyue-web-design
+
+基于 @blyue《网页设计方法论：给 Agent 的执行规范》整理的内容先行网页设计 Skill。从页面目标和真实内容出发，确定视觉方向，建立排版、布局与语义 Design Tokens，完成响应式实现和必要验收。
+
+- 适用于新建网站、落地页、应用界面、仪表盘，以及明确要求的重设计
+- 将数值刻度和审美规则作为有适用条件的默认值，保留品牌系统、必要内容和任务边界
+- 包含中文排版、无障碍组件、有目的的动效和适度验证规范
+- 附完整原文，按需查阅详细规则与示例
+
+需要建立页面的设计方向与系统时使用此 Skill；围绕已有产品界面进行参考还原或局部优化时使用 `bluue-ui-design`。
+
+```text
+使用 $blyue-web-design 设计这个落地页。先检查需求前提，再确定视觉方向，使用真实内容完成响应式实现。
+```
+
+完整规范见 [`blyue-web-design/SKILL.md`](./blyue-web-design/SKILL.md)。
+
 ## 安装
 
 克隆仓库：
@@ -125,6 +142,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\social-content-engine" -Desti
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-infographic-series" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blyue-web-design" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -134,6 +152,7 @@ cp -R ./bluue-ai-skills/social-content-engine ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-infographic-series ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
+cp -R ./bluue-ai-skills/blyue-web-design ~/.codex/skills/
 ```
 
 ## 许可证
