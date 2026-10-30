@@ -1,0 +1,4 @@
+interface:
+  display_name: "图表选型"
+  short_description: "根据数据结构与核心结论选择图表，统一编码并检查表达准确性"
+  default_prompt: "使用 $chart-selection，为这组数据选择最能一眼看出结论的图表，并说明编码与读法。"

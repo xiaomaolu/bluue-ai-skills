@@ -125,6 +125,16 @@ Use $blyue-web-design to design this landing page. Check the assumptions first, 
 
 See [`blyue-web-design/SKILL.md`](./blyue-web-design/SKILL.md).
 
+### chart-selection
+
+Selects charts by data structure and the main takeaway, covering flows, time, comparisons, composition, distributions, and multivariate views. Defines consistent visual encodings and checks readability and rendered output.
+
+```text
+Use $chart-selection to choose the clearest chart for this dataset and explain its visual encoding and how to read it.
+```
+
+See [`chart-selection/SKILL.md`](./chart-selection/SKILL.md).
+
 ## Install
 
 Clone the repository:
@@ -143,6 +153,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destin
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-infographic-series" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blyue-web-design" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\chart-selection" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -153,6 +164,7 @@ cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-infographic-series ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/blyue-web-design ~/.codex/skills/
+cp -R ./bluue-ai-skills/chart-selection ~/.codex/skills/
 ```
 
 ## License

@@ -125,6 +125,16 @@ Bluue 创建的开源 AI Agent Skills。
 
 完整规范见 [`blyue-web-design/SKILL.md`](./blyue-web-design/SKILL.md)。
 
+### chart-selection
+
+根据数据结构与核心结论选择最直观的图表，覆盖流向、时间、对比、构成、分布和多维组合六类场景，并统一视觉编码、检查读法与渲染效果。
+
+```text
+使用 $chart-selection，为这组数据选择最能一眼看出结论的图表，并说明编码与读法。
+```
+
+完整规范见 [`chart-selection/SKILL.md`](./chart-selection/SKILL.md)。
+
 ## 安装
 
 克隆仓库：
@@ -143,6 +153,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-minimal-doodle" -Destin
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-infographic-series" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blyue-web-design" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\chart-selection" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -153,6 +164,7 @@ cp -R ./bluue-ai-skills/bluue-minimal-doodle ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-infographic-series ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/blyue-web-design ~/.codex/skills/
+cp -R ./bluue-ai-skills/chart-selection ~/.codex/skills/
 ```
 
 ## 许可证
