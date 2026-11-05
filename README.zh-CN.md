@@ -135,6 +135,23 @@ Bluue 创建的开源 AI Agent Skills。
 
 完整规范见 [`chart-selection/SKILL.md`](./chart-selection/SKILL.md)。
 
+### bluue-hand-drawn-explainer-video
+
+手绘线稿风格的竖屏概念科普视频工作流与可编辑模板，覆盖计划、事实核查、旁白脚本、语音驱动的 SVG 动画、配乐、渲染和发布文案。
+
+- 使用 1080×1920 画布、手绘墨线和单一强调色
+- 附《汉隆剃刀》示例、Python 模板与 HTML/SVG 动画引擎
+- 提供 MP4、封面图片和可播放网页版的交付流程
+- 需要 Python、NumPy、SoundFile、Playwright 及 Chromium、FFmpeg、sherpa-onnx，以及单独下载的 Kokoro 模型
+
+运行模板前，需按实际环境配置模型路径、本地渲染地址、字体和输出文件名。
+
+```text
+使用 $bluue-hand-drawn-explainer-video，先规划一期约两分钟的「确认偏误」科普视频，包含旁白、分镜和需要核对的事实。
+```
+
+查看 [完整规范](./bluue-hand-drawn-explainer-video/SKILL.md) 与 [模板说明](./bluue-hand-drawn-explainer-video/templates/README.md)。
+
 ## 安装
 
 克隆仓库：
@@ -154,6 +171,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-infographic-series" -De
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blyue-web-design" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\chart-selection" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-hand-drawn-explainer-video" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -165,6 +183,7 @@ cp -R ./bluue-ai-skills/bluue-infographic-series ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/blyue-web-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/chart-selection ~/.codex/skills/
+cp -R ./bluue-ai-skills/bluue-hand-drawn-explainer-video ~/.codex/skills/
 ```
 
 ## 许可证

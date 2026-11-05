@@ -135,6 +135,23 @@ Use $chart-selection to choose the clearest chart for this dataset and explain i
 
 See [`chart-selection/SKILL.md`](./chart-selection/SKILL.md).
 
+### bluue-hand-drawn-explainer-video
+
+A workflow and editable templates for vertical, hand-drawn concept explainer videos. Covers planning, fact checking, narration scripts, speech-driven SVG animation, music, rendering, and publishing copy.
+
+- uses a 1080×1920 canvas, rough ink lines, and one accent color
+- includes a Hanlon's razor example with Python templates and an HTML/SVG animation engine
+- describes delivery of an MP4, a cover image, and a playable HTML version
+- requires Python, NumPy, SoundFile, Playwright with Chromium, FFmpeg, and sherpa-onnx with a separately downloaded Kokoro model
+
+Configure the model path, local rendering URL, fonts, and output filenames for your environment before running the templates.
+
+```text
+Use $bluue-hand-drawn-explainer-video to plan a two-minute video about confirmation bias. Include narration, scene ideas, and facts to verify.
+```
+
+See [`bluue-hand-drawn-explainer-video/SKILL.md`](./bluue-hand-drawn-explainer-video/SKILL.md) and the [template guide](./bluue-hand-drawn-explainer-video/templates/README.md).
+
 ## Install
 
 Clone the repository:
@@ -154,6 +171,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-infographic-series" -De
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blyue-web-design" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\chart-selection" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-hand-drawn-explainer-video" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -165,6 +183,7 @@ cp -R ./bluue-ai-skills/bluue-infographic-series ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/blyue-web-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/chart-selection ~/.codex/skills/
+cp -R ./bluue-ai-skills/bluue-hand-drawn-explainer-video ~/.codex/skills/
 ```
 
 ## License
