@@ -1,207 +1,125 @@
 ---
 name: bluue-ui-design
-description: "Design, implement, revise, or audit product UI using Bluue's preferences: preserve the existing system and essential content, enforce global alignment and hierarchy, avoid generic AI/SaaS-template defaults through intentional color, depth, radius, density, copy, and content-driven layout decisions, build real interactions, and verify the rendered result. Use for Figma or screenshot implementation, visual polish, content replacement, localization, responsive UI, and product-interface QA. Do not use for illustration-only or brand-identity work without a product interface."
+description: "设计、实现、优化或审查产品 UI，适用于新界面、Figma/截图复刻、视觉优化、内容替换、本地化与响应式调整。先确定任务优先级和信息层级，再用亲密性、重复、对齐、对比组织简洁界面；优先复用组件，保持自然柔和的状态过渡，按改动范围验证真实交互。纯插画与品牌标识创作不适用。"
 ---
 
 # Bluue UI Design
 
-Create product UI that is restrained, context-aware, faithful to the supplied material, genuinely interactive, and visibly verified.
+先确定什么重要、什么相关、用户下一步做什么，再决定界面长什么样。用共同的对齐关系、可复用的组件和克制的视觉差异建立秩序；让过渡自然，让内容和操作清楚。
 
-The governing principle is:
+## 先判断任务与范围
 
-> Understand the product and existing system first. Change only what the task authorizes, preserve essential information, remove redundant interface explanation, implement real behavior, and judge completion in the rendered interface.
+- 开始前指出会改变结果的错误前提、逻辑跳跃和关键缺失。先看项目、真实内容和既有资料；能合理推断时直接推进，只有猜错代价高的缺失才询问。
+- 判断属于：新设计、参考复刻、视觉优化、内容替换。可以组合，但不能把替换文案或修一个组件扩展成整页重设计。
+- 再按当前区域的用户目标判断：帮助决策、完成操作、阅读理解或体验作品。同一产品不同区域可以不同；不能把营销页的表现手法默认套进课表、表格和设置。涉及方向选择、实质性重设计、精修或质量审查时，按需读取 [references/impeccable-workflows.md](references/impeccable-workflows.md)。
+- 优先级：用户明确要求与指定目标 > 当前产品品牌和设计系统 > 本 Skill 的偏好 > 外部参考的默认值。区分“准确复刻的目标”和“仅供借鉴的风格”；不拿相似页面替代指定页面。
+- 先确认项目路径、目标页面/组件、受众和语言、真实素材、主要任务与改动范围。保持必要业务内容、用户数据、警告、成本、限制、工作流指引和已实现能力的准确性。
+- 优化现有界面时继承有意设计的结构、字体、组件和 Tokens，改掉不一致与问题根因；不能为了反模板而抹去产品身份。
+- 区分精修与重设计：精修保留已有方向，修复关系与实现；用户明确要求重设计且旧方向不成立时，保留真实内容和功能约束，重新决定构图、层级与组件组织，不能只换颜色、圆角或字体冒充重设计。
 
-## Classify the Task
+## 先定优先级和层级，再开始样式
 
-Before changing anything, determine which mode applies. A task may combine modes, but do not silently expand one mode into another.
+对新设计或实质性重设计，简短写出以下决策，然后直接实施，不把设计说明变成等待审批的流程。局部修改沿用已有决策。
 
-1. **Reference implementation**: Figma, screenshot, existing page, or a specifically named component is the authority.
-2. **Visual refinement**: Preserve product meaning, required content, structure, and behavior; improve visual presentation and remove redundant interface explanation when authorized.
-3. **Content replacement**: Preserve layout, components, interaction, and visual language; replace only the requested copy, assets, or product content.
-4. **New UI design**: Establish a new visual direction only when no existing system or controlling reference applies.
+1. **任务**：谁在什么情境下，需要完成什么；当前区域最重要的下一步动作是什么。
+2. **优先级**：区分必须立刻看到、按需查看和低频配置；依据任务价值、使用频率、依赖与风险排序。
+3. **信息结构**：确定阅读顺序、相关分组、主次区域和主行动，再选择列表、表格、分栏、卡片或渐进展示。
+4. **视觉关系**：确定公共对齐线、组内/组间间距、字体角色、组件密度，以及强调与弱化的方式。
+5. **复用与状态**：选出可复用组件及其变体，列出本次真正需要的交互状态和过渡关系。
 
-Identify the authoritative reference, the existing design system, the allowed scope of change, the target language, required interactions, and desktop/mobile targets. If these can be inferred safely from the supplied project, inspect the project and proceed. Ask only when a missing choice would materially change the result.
+简洁来自优先级和分组，不来自把内容全部藏起来。频繁且关键的操作留在主界面，相关辅助信息放在附近，低频管理与配置再进入次级入口；路径应连续，有状态、有返回，不把所有功能平铺在一屏。
 
-## Non-Negotiable Rules
+## 四条设计原则，落实为可检查的关系
 
-### Preserve scope, content, and context
+| 原则 | 实施方式 | 检查问题 |
+|---|---|---|
+| **亲密性 / Proximity** | 按任务与语义分组；组内紧密，组间更疏；字段、标签、说明、错误与所属操作保持关联。优先用间距、底色或分隔表达分组。 | 不读文字时，能否看出哪些元素属于一组？相关项是否被无关间距、边框或布局拆散？ |
+| **重复 / Repetition** | 同一语义角色复用组件、字号、字重、间距、控件尺寸、图标语言和状态模式。用变体表达必要差异。 | 同一类东西是否表现一致？同一外观是否暗示相同功能？是否存在长得相同、实际行为却不同的控件？ |
+| **对齐 / Alignment** | 为页面和局部区域建立少量明确的公共边、列和基线；嵌套组件继承父级布局，必要时做光学校正。 | 从整页看，标题、工具栏、内容和底部操作能否沿共同轴线阅读？是否有近似对齐造成的漂移？ |
+| **对比 / Contrast** | 按重要性使用清楚的尺寸、字重、位置、留白或颜色差异；先降低次要信息噪音，再强调重点。 | 主次是否一眼清楚？是否把所有元素都强调，或为了柔和把正文、控件和状态弱化到难以辨认？ |
 
-- Reuse the existing components, layout logic, typography, spacing, visual language, assets, and interaction patterns whenever they exist.
-- Make the requested change without redesigning unrelated areas.
-- Keep real business content, user-created content, decision-critical details, warnings, and workflow instructions intact unless the user explicitly authorizes changing them.
-- Minimize non-essential descriptive UI copy. Remove repeated headings, subtitles that restate the title, obvious helper text, decorative labels, and explanations already communicated by structure, icons, or state.
-- Do not confuse concise UI with missing information. If removing text could change meaning, reduce confidence, or make an unfamiliar action ambiguous, keep it or request authorization.
-- When asked to replace content, do not restructure the page unless the new content cannot function within the existing structure; explain that conflict before broadening the change.
-- Do not invent product capabilities, assets, UI states, or claims and present them as implemented facts.
+这是组织关系的判断工具，不是固定比例、自动评分或普遍适用的布局公式。重复不等于同等强调，对齐不等于处处居中，亲密性不等于层层套卡片，对比不等于增加颜色和装饰。
 
-### Treat references as authoritative
+## 把视觉对齐作为核心约束
 
-- Use the exact supplied Figma selection, frame, screenshot, page, route, or named component rather than a merely similar section.
-- Reproduce the reference's hierarchy, grouping, density, proportions, component relationships, and meaningful states.
-- Do not add cards, thumbnails, sections, controls, or decorative elements absent from the reference unless required for real functionality.
-- Do not mechanically copy a reference treatment that conflicts with the established product system. Integrate the reference while preserving product identity, and keep any necessary deviation narrow.
-- If the reference or real product asset is unavailable, do not fabricate a replacement mockup that may be mistaken for the final design.
+- 先定页面容器、边距、栏宽和主要起始线，再排各模块。标题、说明、筛选、列表/表格、分页和操作条应共享有意的对齐关系。
+- 用共同容器、Grid/Flex、公共 Tokens 和组件内部结构解决对齐；不要靠逐项补负边距、绝对定位或空占位去凑齐正常文档布局。参考复刻、叠层或画布确实需要定位时按其坐标系统实现。
+- 文本按角色选择边缘和基线对齐。大小混排优先检查基线；数值列按比较任务对齐，通常右对齐并用等宽数字。不要机械居中表格所有列。
+- 图标的外框居中不保证视觉居中；同时检查可见笔画、文字基线和点击区域。重复行保持图标槽、标签起点、值列与末端操作位置一致。
+- 长标题、换行说明、不同位数的数值和缺省状态不能把相邻区域的公共轴线推散。先改布局约束和文本策略，再考虑局部光学校正。
+- 先看整页和全视口的秩序，再看局部。手机应有适合重排后的公共边和分组，不只是缩小桌面布局。
+- 卡片内图形还要按可见轮廓、明暗面积和视觉重心平衡；相同外框尺寸不代表相同视觉重量。优先保证主体可辨认、文字宽度合理，再调整装饰。做截图对比、功能卡片或已有页面的视觉精修时，读取 [references/visual-refinement.md](references/visual-refinement.md)。
 
-### Build real UI
+## 优先复用能用的组件
 
-- Use real interface components and state, not a flattened screenshot or image pretending to be UI.
-- Buttons, tabs, cards, filters, toggles, dates, selectors, and CTAs must respond when they appear interactive.
-- Keep selection, preview, output, status, loading, completion, and active indicators synchronized.
-- Represent the actual product workflow and specific capabilities rather than substituting generic marketing cards.
-- Use correct brand, platform, provider, or model icons when those identities matter. Do not use arbitrary placeholders or mismatched icons.
+- 实现前查看项目已有设计系统、组件目录、依赖、可用状态和使用方式。先复用合适的现有组件与 Tokens，其次扩展组件变体；确认缺口后再选兼容的成熟组件或原生控件。
+- 对比组件的语义、交互、无障碍、状态覆盖、样式适配与移动行为，不能只因为外观接近就选用。
+- 优先复用按钮、输入、选择器、弹窗、菜单、标签页、表格、日期和图标等基础能力。避免另造同类组件或引入第二套视觉与交互体系。
+- 非必要不使用任何 Unicode 字符替代 icon，包括 Emoji、箭头、勾叉、菜单和其他符号字形；优先复用项目图标组件、统一图标库、SVG 或真实品牌资产，不用文本字符或 CSS content 字符拼凑图标。此约束针对图标用途，不禁止正常文字、标点、数学符号及必要的快捷键记号；仅在用户明确要求或纯文本环境等确有必要时例外。
+- 新依赖要有实际收益，考虑包体、维护、许可、平台兼容与已有技术栈；不要为一个小效果引入整套重库，也不因“复用”把有明确需求的页面硬塞进不适合的组件。
+- 让重复模式回到组件或变体层修复，避免在每个页面复制覆盖样式。小范围的一次性差异不必提前做成庞大抽象。
 
-### Structure interaction and navigation
+## 视觉保持简洁，学习成熟系统的取舍
 
-- Decide the functional hierarchy before arranging controls. Keep frequent, task-critical actions on the primary surface; move supporting or less-frequent actions into secondary navigation, menus, drawers, or detail views; reserve tertiary levels for configuration, administration, and rare tasks.
-- Do not flatten every available feature into one screen. Use progressive disclosure to reduce cognitive load without hiding the user's core task or current status.
-- Keep interaction sequences continuous: preserve relevant context and selections, make the next action evident, provide a clear return path, and avoid dead ends or abrupt jumps between levels.
-- Judge navigation depth by task frequency, importance, and dependency—not by the desire to make every capability immediately visible.
+- 新设计、实质性视觉优化和 UI 风格审查时，读取 [references/visual-restraint.md](references/visual-restraint.md)，执行用户的反模板化偏好；局部改动只应用相关项。这是设计取舍，不是判定作品由 AI 生成的证据，也不授权扩大任务范围。
+- 每个任务区域有明确主行动，次要操作降低视觉权重。多任务工作台可以有多个独立区域，不机械限制全屏按钮数量。
+- 新选字体默认不用 Instrument Serif、Space Grotesk、Bricolage Grotesque；不把斜体或等宽字体当作装饰。优先项目字体或覆盖目标语言的可靠字体。单页默认采用不超过四档字号，应用内可见文字默认不小于 12 CSS px 或对应逻辑单位；正文通常需要更大。字号下限不是可读性合格证明，具体边界见参考。
+- 保留必要标签、状态和解释，删除标题复述、无用途的徽章、眉标、编号、代码式面包屑与副标题。文案直接、准确，不卖萌、不自造术语、不堆 Emoji，不用中圆点或全大写小标题制造风格。简化后仍能判断当前状态、下一步动作与后果。
+- 分组先用留白、共同对齐和必要的表面差异；避免分割线、边框、半透明叠色与多层阴影同时堆叠。嵌套圆角考虑同心关系，同角色线条统一粗细，必要控件边界与焦点保持可辨认。
+- 默认不使用紫色渐变、卡片左侧装饰性彩色竖线，也不以巨型 Hero 标题、大圆角、玻璃效果、居中首屏或三列等大卡片自动美化。下拉箭头按可发现性决定，不给普通按钮批量附加或无理由删除真实菜单提示。
+- 图表先回答当前任务的问题，只展示必要的数据关系、刻度与注释；细节按需展开，不能用复杂度假装专业，也不能为简洁删去关键单位、比较依据或异常。
+- 同一语义使用一致的字体、颜色、控件和图标规格；真实品牌身份用正确资产。已有明确品牌、指定参考或任务要求需要例外时据此适配，不借反模板化抹掉产品身份。
+- 风格学习看**为什么这样取舍**：任务聚焦、熟悉的模式、稳定的布局、有限的强调、可靠反馈和包容性。大厂并非一种统一风格，不因为品牌有名就认定某种效果适合当前产品。
+- 新视觉方向需要借鉴时，按任务选择一到两个相近产品或官方系统，记录“问题 → 模式 → 适用原因 → 本项目调整”；已有系统或局部修改不必重新调研。
+- 不混搭多家系统的表层特征，不照搬品牌资产、特有文案或整套皮肤。按需查阅 [references/design-patterns.md](references/design-patterns.md) 中的官方原则和迁移方法。
 
-### Use motion deliberately
+## 过渡自然、柔和，操作反馈明确
 
-- Use animation to clarify state changes, hierarchy, progress, reordering, reveal, or completion—not as ambient decoration.
-- Trigger staged demonstrations when the relevant section becomes visible or in response to an intentional user action. Do not let the meaningful sequence finish offscreen.
-- Keep motion brief and legible, and support `prefers-reduced-motion`.
-- Preserve interactive replay when the product demonstration requires users to revisit the current state.
+- 每段动效先说明它解释什么：状态切换、展开/收起、选中迁移、重排、结果到达或任务完成。没有信息用途时，静止通常更好。
+- 连续状态保留对象身份、空间关系和当前上下文；起止位置有来源，不突然跳动、清空重画或把整个界面同时淡出。为异步内容预留合理空间，避免布局抖动。
+- 即时操作及时给出按下、处理中或结果反馈；自然柔和不意味着延迟响应。成功状态来自实际结果，不以动画结束冒充请求成功，不虚构加载时长或百分比。
+- 复用项目的 duration、easing 或 spring Tokens。没有约定时，短反馈约 100–180ms、局部容器变化约 180–300ms 可作为起点；按位移、信息量、平台和输入方式调整，不当作行业强制标准。
+- 进入与离开的曲线可以不同；允许快速反向、中断或连续点击，过渡从当前可见状态继续，避免排队播完旧动作。默认不用明显弹跳、过冲、长距离漂移或重复脉冲来表现“高级”。
+- 优先使用 `transform`、`opacity` 等合成友好方式；确实需要布局动画时控制重排范围。按属性显式配置，不对所有属性套 `transition: all`。
+- 功能切换以正确状态为先，动效不能改变点击目标、遮住错误、阻碍输入、吞掉快速操作或成为阅读必经等待。
+- 网站展示动画在进入视口或用户触发后开始，离屏/后台暂停；静态文字通常不循环。持续自动播放提供合适的暂停/重播方式。
+- `prefers-reduced-motion` 关闭非必要位移、缩放、模糊、视差与循环，直接提供可理解的状态和操作。减少动态效果不能隐藏正文或替用户执行动作。
+- **产品交互动效**与**独立展示动画**分开判断。仅在用户要求演示、动画、视频或 GIF 时读取 [references/motion-showcase.md](references/motion-showcase.md)，不把慢速展示节奏和空场开头套进产品交互。
 
-## Visual Direction
+## 按场景采用细节技巧
 
-Aim for a simple, polished, product-oriented interface with clear hierarchy and low visual noise.
+- 设计或优化滚动列表、Command + K 面板与键盘选择时，读取 [references/interaction-details.md](references/interaction-details.md)：稳定高度的列表可露出下一项一部分；方向键导航接近边缘时提前滚动，保留后续内容线索。当前活动项及焦点应完整可见；无溢出或到达末尾时不制造“还有更多”的假象。
+- 涉及异步搜索、工具栏提示、加载按钮、通知或移动抽屉时，按需读取同一参考中的对应条目。每个技巧只解决当前存在的问题，不为显得精致而叠加全部效果。
+- 涉及悬停展开的级联菜单时，读取 [references/cascading-menu.md](references/cascading-menu.md)：优先复用组件的指针意图保护，让斜向进入子菜单不误切换，短暂移出不立即关闭；保留及时的点击、触控和键盘响应，不照搬固定延时、皮肤或弹跳效果。
+- 吸收新技巧时优先核实近一至两年的一手资料，区分发布日期、更新日期与本次查阅日期；经典技巧有当前实现依据仍可保留，但不能包装成新发明。把适用场景、用户收益和失效边界一起写入规则。
 
-### Avoid statistical-default aesthetics
+## 真实内容、语言与可用性
 
-Treat the following as Bluue's default preferences and review lenses, not universal bans. Apply them in proportion to the task. The user's explicit direction, an authoritative reference, accessibility, product needs, and an established design system may justify any of these treatments. If a project already uses one intentionally, preserve it unless the task authorizes a change; refine inconsistent use instead of erasing the product's identity.
+- 用真实业务文案、图片、数据、状态和已实现能力设计。没有素材时标明示例或待补，不编造客户、评价、指标、保障、免费政策或产品界面。
+- 新落地页可从受众、具体价值、可用证据、疑虑和下一步行动组织内容；不预设必有副标题、客户标志、FAQ 或固定区块数量。把证据放在它支持的主张附近。
+- 控件需要真实行为；选择、导航、预览、输出、加载、完成和错误状态保持一致。补齐本次交互适用的空态、禁用和恢复路径，不给普通链接虚构处理状态。
+- 操作用 `button`，导航用 `a`；标签与字段关联，图标按钮有可访问名称与必要提示。弹窗维护焦点进入、停留、退出与返回，关键错误不只靠短暂通知。
+- 文字和关键交互线索对比度按实际前景、背景与透明度计算；沿用项目的无障碍标准。柔和通过色调、空间和动效实现，不能靠降低必要对比度。状态不只靠颜色，键盘焦点可见。
+- 手机有意重排并保留核心任务，不出现意外整页横向滚动。宽表格或时间线可使用范围明确、可操作的局部滚动，不能靠裁掉内容掩盖溢出。
+- 本地化覆盖导航、按钮、图形内文案、空态与错误等所有可见层；保留真实品牌、平台和技术标识，复用项目的语言系统，不强制改变未要求的语言。
+- 图片预留尺寸，关键信息不裁掉；正文与关键操作不依赖动画脚本才能出现。不用截图代替可操作界面。
 
-For new UI without usable brand tokens, make a deliberate choice based on the product, audience, content, and interaction model. Do not accept the most common generated pattern merely because it is easy to produce.
+## 实施与验收
 
-1. **Do not default to purple or indigo.** Purple-500, indigo-600, and similar blue-purple palettes are common generated-interface defaults, not neutral decisions. Use the project's brand and semantic tokens first. When none exist, choose and document a palette that fits the product's character rather than automatically signaling generic “modern technology.” A deliberate purple palette remains valid when the brand or content supports it.
-2. **Do not use gradients as automatic polish.** Avoid habitual gradient hero backgrounds, gradient buttons, and `bg-clip-text` headlines. Gradients must have a brand, focal, spatial, data, or state purpose and sufficient text contrast. Prefer flat surfaces when they integrate better with the system and reduce noise; use subtle system-defined gradients when there is a clear rationale.
-3. **Do not round everything to the same large radius.** Radius is a hierarchy and a component-family token. Use smaller radii for compact controls and tags, larger radii for containers or overlays when appropriate, and sharper geometry when the product voice calls for precision. Avoid applying `rounded-2xl` or an equivalent maximum radius indiscriminately to cards, buttons, fields, and images.
-4. **Do not begin from a generic centered SaaS hero.** A centered headline, supporting paragraph, two CTAs, and decorative background is not a default page architecture. Start with the product's actual content and the user's primary task. Let the first screen demonstrate purpose, value, workflow, or evidence in the form most appropriate to that product.
-5. **Do not design against lorem-ipsum-shaped content.** Use real content when available. Otherwise use realistic, domain-specific sample data with representative length, variability, dates, amounts, names, statuses, long words, and failure cases. Placeholder copy must stress the layout rather than hide wrapping, truncation, and overflow problems. Avoid generic labels such as “Welcome to our platform” and “Feature 1/2/3.”
-6. **Do not make every container uniformly spacious.** Repeated `p-8`, `p-12`, or equivalent oversized padding can erase grouping and waste limited space. Use a spacing scale with intentional contrast: related elements closer, separate groups farther apart, and density adapted to the device and task. Dashboards and mobile flows should preserve useful information density rather than imitate spacious marketing screenshots.
-7. **Do not use equal card grids as a universal container.** A three-column grid of identical cards implies equal importance. Express real priority and reading order through purpose-driven composition: asymmetric regions, lists, tables, timelines, split views, progressive disclosure, or a dominant item with supporting content when those structures fit better. Use an equal grid only when the items are genuinely peers.
-8. **Do not create hierarchy by stacking shadows.** Default to borders, surface tone, spacing, and contrast for separation. Reserve subtle, consistent shadows for meaningful elevation such as overlays, menus, drag state, or an explicitly defined system level. Avoid large blurred shadows that compete with content and increase rendering cost, especially on scrolling surfaces and lower-end devices.
+按任务推进：检查真实项目与范围 → 确定层级与对齐关系 → 选择可复用组件和状态 → 实现 → 验证对应风险 → 修复根因。不要为了形式完整重复无收益的步骤。
 
-### Alignment and spatial system
+- 本轮先选具体动作：减法、强化层级、降低噪音、澄清文案、适配、状态补全或精修。审查时将视觉判断与技术证据分开；先解决任务阻塞、数据丢失与误导状态，再处理结构和细节。单纯审查不擅自改文件，明确要求优化时直接完成范围内修复。
+- 新页面或显著视觉改动：在代表性的桌面与手机宽度各检查一次，先整体层级、公共边和阅读顺序，再看局部间距、字体基线、图标与控件尺寸。
+- 局部文案、小修复：只检查受影响内容、布局及操作，不重跑所有页面、设备和主题。只有用户要求参考复刻或证据显示视觉不符时，才做相应的精细比较。
+- 操作本次受影响的真实流程，检查路由、语言、选择/结果同步、键盘访问、焦点、错误恢复和需要的动效中断。只验证实际实现的状态和主题。
+- 对齐异常先找容器、布局约束、字体指标和组件差异；不要靠遮挡、截断、硬编码位移或删必要内容掩盖。动效异常检查状态来源、布局稳定性与时序。
+- 已通过相关检查后停止；新变化、失败或未解问题才触发补充验证。不把生成截图、编译通过或形式评分当成设计验收。
+- 用户反馈“没变化”或“不像参考”时，回到指定目标与实际渲染核对，不能仅拿构建日志回应。工具不可用时明确未验证范围。
 
-- Treat alignment as a primary design constraint. Major headings, toolbars, content grids, side panels, and footer actions should share deliberate edge and baseline relationships.
-- Establish a small gutter and spacing system, then reuse it. Avoid near-matching padding values that create subtle drift between adjacent regions.
-- Distinguish spacing within a module from spacing between different categories or modules. Related elements should feel grouped; separate groups should have visibly more space or a structural divider. As a practical check, inter-group spacing should usually be greater than internal spacing rather than nearly identical.
-- Align icons optically with text, not only mathematically. Keep control heights, label baselines, column starts, and repeated row anatomy consistent.
-- Check the interface first from the full-page or full-viewport perspective, then inspect local component alignment. A row can be internally tidy while still drifting from the page grid.
-- Check alignment in the rendered desktop and mobile interface; source-code symmetry is not proof of visual alignment.
+## 交付
 
-### Color
+简述结果、实际验证和重要限制。对于可供查看的新 UI 版本，用三到五行概括适用的颜色、排版、布局、风格及一两个可调整变量，便于用户直接提出修改；不输出冗长检查清单。
 
-- Derive color from the brand, product, content, and current design system; the anti-default guidance above governs cases without an established palette.
-- Keep the number of colors restrained within one UI. Establish a coherent primary, supporting, neutral, and semantic-state palette instead of assigning unrelated colors to individual modules.
-- Use color to express hierarchy, identity, focus, and state; do not make every element compete for attention.
-- Do not turn project-specific directions such as a particular blue, avoiding black, or a warm green palette into universal rules.
+## 外部方案的吸收边界
 
-### Depth and effects
-
-- Follow the gradient, shadow, and radius decisions in the anti-default guidance above. Keep any justified effect restrained and consistent with the design system.
-- Avoid decorative glow, glass effects, heavy blur, and ornamental layers when they do not improve comprehension.
-- Do not add dots, bars, underlines, badges, corner marks, or floating shapes merely to make an area look designed. Every visible mark must communicate function, hierarchy, identity, or state; remove it when it repeats information already shown more clearly elsewhere.
-- By default, do not combine a same-hue vertical accent bar with a low-opacity block of that hue as a generic selected, active, or highlighted treatment. Choose one primary signal—such as a tint, border, type change, icon, checkmark, or position—and add another only when an established design system, complex state, or accessibility requirement justifies the redundancy.
-- Reduce frame-within-frame composition. Prefer open surfaces, shared alignment, whitespace, tonal bands, dividers, and a single necessary boundary over nested cards and repeated bordered wrappers.
-- Inputs, data tables, calendars, modals, and true grouped controls may retain boundaries when those boundaries improve scanning, editing, or interaction clarity.
-
-### Typography, icons, and density
-
-- Preserve the product's existing font unless the task explicitly changes it. Resolve missing fonts rather than silently substituting a visibly different typeface.
-- Keep the type scale deliberately small and role-based. The same semantic level should use the same size, weight, line height, casing, and alignment across the interface.
-- Keep icon sizes, control heights, border weights, and internal padding consistent with the same component level; visual hierarchy should remain coherent when the whole screen is viewed at once.
-- Avoid unnecessary all-caps English, especially inside Chinese interfaces; retain legitimate brands, acronyms, and model names.
-- Prefer clear outline icons when no existing icon language overrides this preference. Keep stroke weight, optical size, alignment, and metaphor consistent.
-- Use a familiar icon in place of a visible label when the meaning is conventional and context is sufficient. Use `icon + short label` for important or less familiar actions; do not replace clarity with icon guessing.
-- Every icon-only interactive control needs an accessible name and, when useful, a tooltip. Icons must come from one coherent family unless real platform or brand marks are required.
-- Maintain compact but readable information density. Do not create empty marketing layouts that weaken product substance, and do not compress core workspaces merely to fit a short viewport.
-
-## Localization
-
-When the task requests Chinese or global Chinese UI:
-
-- Translate every user-visible layer, including navigation, controls, diagrams, cards, empty states, helper text, product mock UI, and visual components.
-- Preserve legitimate brand names, platform names, model names, and required technical identifiers.
-- Use natural, direct Chinese rather than literal translation.
-- Route reusable product copy through the project's localization system when one exists; scan visual components for hard-coded language as well as body copy.
-
-Do not force Chinese onto a different target locale unless requested.
-
-## Responsive and Accessible Behavior
-
-- Design mobile behavior intentionally rather than shrinking the desktop composition.
-- Prevent page-level horizontal overflow. If horizontal browsing is appropriate, contain it within the relevant tab or card region.
-- Preserve the readability and functional size of core product panels on short viewports.
-- Provide visible focus states and appropriate semantics for interactive controls.
-- Use real ARIA state such as `aria-selected` or `aria-pressed` when applicable.
-- Do not rely on color alone for selection, success, warning, or error states.
-
-## Working Method
-
-1. Inspect the exact reference, target route, existing components, assets, design tokens, localization structure, and current behavior.
-2. State or internally establish what must remain unchanged and what is allowed to change.
-3. Establish the task flow and primary, secondary, and tertiary functional hierarchy before deciding what belongs on the main screen.
-4. Establish the alignment grid, spacing hierarchy, content priority, radius and type tokens, and allowed container layers before styling individual components.
-5. Implement the smallest coherent change that fulfills the product and visual requirement.
-6. Audit the eight anti-default failure modes where relevant, plus repeated descriptions, nested frames, decorative marks, redundant selection signals, token consistency, module spacing, and edge/baseline alignment.
-7. Exercise all visible interactions and verify that related states remain synchronized across navigation levels.
-8. Review the whole rendered UI first, then local details, against the authoritative reference at the intended desktop and mobile sizes.
-9. Fix visual, interaction, accessibility, localization, routing, and console issues before declaring completion.
-
-Research comparable products or reusable resources before coding when the task is exploratory or the user asks for a plan first. Research does not authorize copying another product's identity or replacing the supplied reference.
-
-## Per-Version Design Summary
-
-After completing every version that the user can review or test, send a concise design summary in the final response so the user can quickly request changes. Report only material decisions, not the implementation log.
-
-Use three to five short lines and include the categories that apply:
-
-- **Color**: primary, neutral, and semantic-color direction; include exact values only when useful.
-- **Typography**: font, hierarchy, density, and important size or weight decisions.
-- **Layout**: alignment grid, spacing rhythm, major regions, and responsive behavior.
-- **Style**: container model, icon treatment, radius, shadow, gradient, and motion choices.
-- **Adjustable next**: one or two high-impact variables the user can change next.
-
-Keep the summary concise and user-editable. Do not bury it inside test results or a long change log.
-
-## Completion Standard
-
-Code completion, a passing build, or a generated screenshot is supporting evidence, not final acceptance.
-
-Before reporting completion, verify as applicable:
-
-- the exact route, locale, anchor, Figma node, or selected component;
-- the rendered visual hierarchy and comparison with the source reference;
-- real interaction for tabs, buttons, filters, toggles, dates, selectors, CTAs, and generated states;
-- synchronized selection, preview, output, and completion state;
-- desktop and mobile rendering, including overflow behavior;
-- navigation destinations and other affected routes;
-- missing fonts, incorrect icons, inconsistent casing, excess colors, unjustified shadows, and decorative gradients;
-- drifting page-level edges or baselines, inconsistent font sizes or radii, weak separation between module categories, excessive explanatory copy, repeated visible labels, redundant selection treatments, meaningless decorative marks, and unnecessary nested frames;
-- whether primary, secondary, and tertiary functions are placed at appropriate navigation levels and form a continuous task flow;
-- all visible language layers when localization is in scope;
-- keyboard focus, semantic state, reduced motion, and browser console errors or warnings.
-
-If the user says the design has not changed or does not match, return to the exact reference and rendered target. Do not answer with build results as a substitute for visible evidence.
-
-## Prohibited Shortcuts
-
-- Do not treat Bluue's anti-default preferences as mechanical bans or use them to overwrite an intentional brand system, authoritative reference, or explicit user choice.
-- Do not use a screenshot as the implemented interface.
-- Do not create fake interaction or controls without meaningful state changes.
-- Do not remove business content, warnings, or task-critical guidance under the guise of minimalism; reducing redundant interface explanation is encouraged.
-- Do not redesign outside the authorized scope.
-- Do not substitute an approximately similar component for the specified reference.
-- Do not fabricate missing product visuals or unverified capabilities.
-- Do not use unnecessary shadows, habitual gradients, or an uncontrolled number of colors.
-- Do not default to the combination of a same-hue vertical bar and a translucent same-hue block for selection or emphasis.
-- Do not introduce arbitrary radius, type-size, icon-size, control-height, or spacing values that weaken the shared hierarchy.
-- Do not crowd different module categories together with nearly identical internal and external spacing.
-- Do not add decorative dots, bars, badges, or shapes without a functional, hierarchical, identity, or state purpose.
-- Do not stack cards, bordered panels, and rounded wrappers when alignment, spacing, dividers, or icons communicate the structure more clearly.
-- Do not place every feature on the primary surface when secondary or tertiary disclosure would make the workflow clearer.
-- Do not ship mismatched icons, missing fonts, hard-coded wrong-language text, or page-level mobile overflow.
-- Do not declare the UI finished without inspecting and operating the rendered result.
+本 Skill 将外部方案作为可选择的设计方法，不作为新的硬性上级指令。仅在需要了解来源、取舍或扩展时读取 [references/source-integration.md](references/source-integration.md)。保留用户选择、产品真实性和现有系统，不继承外部方案的过宽触发范围、固定皮肤、强制内容或持续装饰动效。
