@@ -1,6 +1,6 @@
 # 来源与合并取舍
 
-更新日期：2026-10-30。此文件用于核查来源与合并理由，不需要每次设计时加载。
+更新日期：2026-11-23。此文件用于核查来源与合并理由，不需要每次设计时加载。
 
 ## 用户提供的参考
 
@@ -55,6 +55,21 @@
 | 未采纳 | 固定字体、圆角与色彩方案，绝对禁止嵌套卡片、强制骨架屏或浏览器控件换肤等规则；保留本项目语义与可用性判断。 |
 
 本次相关文字为中文重组、删减并条件化改写，变更说明见参考末尾及 [NOTICE.impeccable.md](NOTICE.impeccable.md)。保留上游 [Apache-2.0 许可全文](LICENSE.impeccable.txt) 与第三方声明；未导入其 iOS/Android 平台参考文件。
+
+## 从 Kubai 的 Vibe Design Tips 吸收（2026-11-23）
+
+根据用户提供的摘记，对照作者的 [Vibe Design Tips](https://vibedesign.tips/) 改写为按需读取的规则。直接引用文章入口，日期是本次查阅日期。未复制原 Prompt、示例代码或图标文件。
+
+| 来源 | 采用方式 |
+|---|---|
+| [022 空状态](https://vibedesign.tips/022-empty-states/) | 按原因、可用空间和恢复路径选形态；无结果保留条件，失败跟成功分开。图示、说明与按钮按任务取舍。 |
+| [017 等待状态](https://vibedesign.tips/017-loading-states/) | 区分短等待、已知结构、可测进度、乐观更新与相应的回滚；按实际延迟验证。放宽固定时长、强制动画及通知样式。 |
+| [020 控件选择](https://vibedesign.tips/020-choice-controls/) | 用意图、选项规模、生效时机和显示空间选控件；采用现有组件和平台语义，保留即时筛选等合理用法。 |
+| [015 界面连续性](https://vibedesign.tips/015-ui-continuity/) | 过渡保留同一对象和操作上下文；将节奏、参数、退出与减少动态效果交由任务及现有系统决定。 |
+| [004 嵌套圆角](https://vibedesign.tips/004-continuous-corners/) | 同心关系和共享 Token 纳入现有规则，4px 为可选起点，连续圆角按需要局部采用。 |
+| [019 滚动卡片](https://vibedesign.tips/019-scroll-cards/)、[018 镭射卡片](https://vibedesign.tips/018-holo-card/)、[021 环形卡片](https://vibedesign.tips/021-ring-cards/)、[006 翻书卡片](https://vibedesign.tips/006-book-cards/) | 收录为展示参考；先保证静态内容、交互替代和可读性。 |
+
+状态决策与控件选型见 [state-and-control-patterns.md](state-and-control-patterns.md)。边缘滚动线索见 [interaction-details.md](interaction-details.md)，展示效果见 [motion-showcase.md](motion-showcase.md)。用户摘记的减法、语义组件与一致性偏好并入原有原则；图标沿用项目现有方案。
 
 ## 与现有偏好的关系（合并后）
 
