@@ -152,6 +152,14 @@ Use $bluue-hand-drawn-explainer-video to plan a two-minute video about confirmat
 
 See [`bluue-hand-drawn-explainer-video/SKILL.md`](./bluue-hand-drawn-explainer-video/SKILL.md) and the [template guide](./bluue-hand-drawn-explainer-video/templates/README.md).
 
+### blue-software-engineering-gpt
+
+A pre-coding workflow for feature work, bug fixes, scripts, and database migrations. Check assumptions and root causes, keep acceptance examples from becoming system constraints, and validate the change through its normal entry point. It includes focused checks for persisted state, approvals, retries, and external side effects.
+
+Use `$blue-software-engineering-gpt` before a coding task. To make it the default for coding tasks, add that instruction to your Codex `AGENTS.md`.
+
+See [the skill instructions](./blue-software-engineering-gpt/SKILL.md).
+
 ## Install
 
 Clone the repository:
@@ -172,6 +180,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blyue-web-design" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\chart-selection" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-hand-drawn-explainer-video" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blue-software-engineering-gpt" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -184,6 +193,7 @@ cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/blyue-web-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/chart-selection ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-hand-drawn-explainer-video ~/.codex/skills/
+cp -R ./bluue-ai-skills/blue-software-engineering-gpt ~/.codex/skills/
 ```
 
 ## License

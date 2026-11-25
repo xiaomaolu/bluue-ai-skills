@@ -152,6 +152,14 @@ Bluue 创建的开源 AI Agent Skills。
 
 查看 [完整规范](./bluue-hand-drawn-explainer-video/SKILL.md) 与 [模板说明](./bluue-hand-drawn-explainer-video/templates/README.md)。
 
+### blue-software-engineering-gpt
+
+适用于功能开发、缺陷修复、脚本和数据库迁移。写代码前先核对前提、追查故障根因、区分系统约束与验收样例。实现后从正常入口验证，并按风险检查持久化、审批、重试和外部副作用。
+
+开始写代码前可调用 `$blue-software-engineering-gpt`。想让 Codex 在每次编码前都调用它，可以把这条指令写入自己的 `AGENTS.md`。
+
+查看[完整技能说明](./blue-software-engineering-gpt/SKILL.md)。
+
 ## 安装
 
 克隆仓库：
@@ -172,6 +180,7 @@ Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-ui-design" -Destination
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blyue-web-design" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\chart-selection" -Destination "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\bluue-hand-drawn-explainer-video" -Destination "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse -LiteralPath ".\bluue-ai-skills\blue-software-engineering-gpt" -Destination "$env:USERPROFILE\.codex\skills\"
 ```
 
 ### macOS / Linux
@@ -184,6 +193,7 @@ cp -R ./bluue-ai-skills/bluue-ui-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/blyue-web-design ~/.codex/skills/
 cp -R ./bluue-ai-skills/chart-selection ~/.codex/skills/
 cp -R ./bluue-ai-skills/bluue-hand-drawn-explainer-video ~/.codex/skills/
+cp -R ./bluue-ai-skills/blue-software-engineering-gpt ~/.codex/skills/
 ```
 
 ## 许可证
